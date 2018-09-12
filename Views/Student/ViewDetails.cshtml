@@ -10,7 +10,7 @@
     <h4>Register</h4>
     <hr />
     <dl class="dl-horizontal">
-             @*@Html.HiddenFor(model => model.UserId)*@
+          @Html.HiddenFor(model => model.UserId)
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -78,6 +78,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "StudentIndex"), new { id = Model.UserId }|
+    @Html.ActionLink("Edit", "StudentIndex", new { id = Model.UserId })
     @*@Html.ActionLink("Edit","StudentIndex")*@
 </p>

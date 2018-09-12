@@ -102,37 +102,44 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\RegistrationModel.Context.tt">
+    <Content Include="Models\ImageModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RegistrationModel.Context.cs</LastGenOutput>
-      <DependentUpon>RegistrationModel.edmx</DependentUpon>
+      <DependentUpon>ImageModel.edmx</DependentUpon>
+      <LastGenOutput>ImageModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\RegistrationModel.tt">
+    <Content Include="Models\ImageModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RegistrationModel.edmx</DependentUpon>
-      <LastGenOutput>RegistrationModel.cs</LastGenOutput>
+      <DependentUpon>ImageModel.edmx</DependentUpon>
+      <LastGenOutput>ImageModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Register.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Register.edmx</DependentUpon>
+      <LastGenOutput>Register.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Register.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Register.edmx</DependentUpon>
+      <LastGenOutput>Register1.cs</LastGenOutput>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <EntityDeploy Include="Models\UserDetails.edmx">
+    <EntityDeploy Include="Models\Register.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserDetails.Designer.cs</LastGenOutput>
+      <LastGenOutput>Register.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\UserDetails.edmx.diagram">
-      <DependentUpon>UserDetails.edmx</DependentUpon>
+    <Content Include="Models\Register.edmx.diagram">
+      <DependentUpon>Register.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ImageModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ImageModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ImageModel.edmx.diagram">
+      <DependentUpon>ImageModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\UserDetails.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDetails.edmx</DependentUpon>
-      <LastGenOutput>UserDetails.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UserDetails.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDetails.edmx</DependentUpon>
-      <LastGenOutput>UserDetails.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -151,59 +158,56 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\UserRegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Image.cs">
+      <DependentUpon>ImageModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImageModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImageModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImageModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Register.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Register.cs">
-      <DependentUpon>UserDetails.tt</DependentUpon>
+      <DependentUpon>ImageModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RegistrationModel.Context.cs">
+    <Compile Include="Models\Register.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RegistrationModel.Context.tt</DependentUpon>
+      <DependentUpon>Register.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\RegistrationModel.cs">
+    <Compile Include="Models\Register1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RegistrationModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RegistrationModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RegistrationModel.edmx</DependentUpon>
+      <DependentUpon>Register.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
-      <DependentUpon>UserDetails.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDetails.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDetails.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDetails.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDetails.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDetails.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDetails.edmx</DependentUpon>
+      <DependentUpon>ImageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\RegistrationModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RegistrationModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\RegistrationModel.edmx.diagram">
-      <DependentUpon>RegistrationModel.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -211,7 +215,6 @@
     <Content Include="Views\UserRegister\Register.cshtml" />
     <Content Include="Views\UserRegister\Login.cshtml" />
     <Content Include="Views\UserRegister\AddImage.cshtml" />
-    <Content Include="Views\Image\AddProfile.cshtml" />
     <Content Include="Views\UserRegister\Index.cshtml" />
     <Content Include="Views\Admin\ShowList.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
@@ -225,7 +228,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Student\ViewDetails.cshtml" />
     <Content Include="Views\Student\StudentIndex.cshtml" />
-    <Content Include="Views\Student\StudentProfile.cshtml" />
+    <Content Include="Views\Image\AddImage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -235,7 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="User-Images\" />
+    <Folder Include="User-Image\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -16,7 +16,7 @@ namespace UserRegistration.Controllers
         // GET: UserRegister
         public ActionResult Index()
         {
-            using (ConnstrEntities1 db = new ConnstrEntities1())
+            using (ConnstrEntities db = new ConnstrEntities())
             {
                 return View(db.Register.ToList());
             }
@@ -30,13 +30,13 @@ namespace UserRegistration.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (ConnstrEntities1 db = new ConnstrEntities1())
+                using (ConnstrEntities db = new ConnstrEntities())
                 {
                     db.Register.Add(account);
                     db.SaveChanges();
                 }
                 ModelState.Clear();
-                ViewBag.Message = account.UserId + " " + account.FirstName + " " + account.LastName + " " + account.DOB + " " + account.City + " " + account.UserName + " " + account.Password + "successfully Registered";
+                ViewBag.Message = account.UserId + " " + account.FirstName + " " + account.LastName + " " + account.DOB + " " + account.City + " " + account.UserName + " " + account.Password + " "+account.RoleName + " " +account.UserImage + "successfully Registered";
 
             }
 
@@ -50,14 +50,12 @@ namespace UserRegistration.Controllers
         [HttpPost]
         public ActionResult Login(Register student)
         {
-            using (ConnstrEntities1 db = new ConnstrEntities1())
+            using (ConnstrEntities db = new ConnstrEntities())
             {
                 var form = db.Register.Where(u => u.UserName == student.UserName && u.Password == student.Password).FirstOrDefault();
                 if (form != null)
                     if (form.RoleName == "Admin")
                     {
-                        Session["UserId"] = form.UserId.ToString();
-                        Session["FirstName"] = form.FirstName.ToString();
                         return RedirectToAction("ShowList", "Admin");
                     }
                    else if(form.RoleName == "Teacher")
@@ -66,7 +64,7 @@ namespace UserRegistration.Controllers
                     }
                    else if(form.RoleName == "Student")
                     {
-                        return RedirectToAction("StudentProfile", "Student");
+                        return RedirectToAction("ViewDetails", "Student");
                     }
                     //    {
                     //        Session["UserId"] = form.UserId.ToString();

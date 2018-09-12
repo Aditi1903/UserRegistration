@@ -11,52 +11,8 @@ namespace UserRegistration.Controllers
 {
     public class StudentController : Controller
     {
-        private ConnstrEntities1 obj = new ConnstrEntities1();
-        // private ConnstrEntities1 obj = new ConnstrEntities1();
-        // GET: Student
-        //public ActionResult AddImage()
-        //{
-        //    return View(); 
-        //}
-        //[HttpPost]
-        //public ActionResult AddImage(Register ImageModel)
-        //{
-        //    string fileName = Path.GetFileNameWithoutExtension(ImageModel.ImageFile.FileName);
-        //    string extension = Path.GetExtension(ImageModel.ImageFile.FileName);
-        //    fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-        //    ImageModel.UserImage = "~/User-Images/" + fileName;
-        //    fileName = Path.Combine(Server.MapPath("~/User-Images/"), fileName);
-        //    ImageModel.ImageFile.SaveAs(fileName);
-        //    using (ConnstrEntities1 db = new ConnstrEntities1())
-        //    {
-        //        db.Registers.Add(ImageModel);
-        //        db.SaveChanges();
-        //    }
-        //    ModelState.Clear();
-        //    return RedirectToAction("ViewDetails");
-        //}
-
-        //[HttpGet]
-        //public ActionResult View(int Id)
-        //{
-        //    Register imageModel = new Register();
-        //    using (ConnstrEntities1 db = new ConnstrEntities1())
-        //    {
-        //        imageModel = db.Registers.Where(x => x.UserId == Id).FirstOrDefault();
-        //    }
-        //    return View(imageModel);
-        //}
-
-        //Get Student Details
-        //public ActionResult ViewDetails(string name)
-        //{
-        //    {
-        //        var dataOfStudent = obj.Register.ToList().FirstOrDefault(x => x.UserName == name);
-
-        //        return View(dataOfStudent);
-        //    }
-
-        //}
+        private ConnstrEntities obj = new ConnstrEntities();
+        
         [HttpGet]
         public ActionResult StudentIndex(int Id)
         {
@@ -88,11 +44,6 @@ namespace UserRegistration.Controllers
             {
                 return View();
             }
-        }
-        public ActionResult StudentProfile()
-        {
-           
-            return View();
         }
             public ActionResult ViewDetails(int Id)
         {

@@ -9,7 +9,7 @@ namespace UserRegistration.Controllers
 {
     public class AdminController : Controller
     {
-        private ConnstrEntities1 obj = new ConnstrEntities1();
+        private ConnstrEntities obj = new ConnstrEntities();
         // GET: Admin
         public ActionResult ShowList()
         {

@@ -10,7 +10,7 @@ namespace UserRegistration.Controllers
     public class TeacherController : Controller
     {
         // GET: Teacher
-        private ConnstrEntities1 obj = new ConnstrEntities1();
+        private ConnstrEntities obj = new ConnstrEntities();
         public ActionResult ShowListonly()
         {
             var data = obj.Register.ToList();

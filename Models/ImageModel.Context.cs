@@ -25,7 +25,8 @@ namespace UserRegistration.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Register> Register { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<Register> Registers { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
     }
 }
